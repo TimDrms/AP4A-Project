@@ -1,0 +1,8 @@
+.vscode
+
+*.pdf
+*.docx
+
+*.o
+*.exe
+main
