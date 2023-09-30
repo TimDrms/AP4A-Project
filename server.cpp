@@ -63,7 +63,7 @@ void Server::consoleWrite()
     cout << *this;
 }
 
-// Ecrit dans notre fichier de log les données
+// Ecrit les données dans notre fichier de log
 void Server::fileWrite()
 {
     ofstream logFile;
@@ -79,9 +79,9 @@ void Server::fileWrite()
     }
 }
 
+// Surcharge opérateur <<
 ostream &operator<<(ostream &os, const Server &srv)
 {
     os << "Température : " << srv.temperature << "\nHumidité : " << srv.humidite << "\nLumière : " << srv.lumiere << "\nSonore : " << srv.sonore << endl; //<< srv.da << '/' << srv.yr;
     return os;
 }
-

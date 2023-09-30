@@ -23,16 +23,21 @@ class Server{
     float sonore;
 
     public:
+
+    // Constructeurs et destructeur
     Server();
     Server(const Server &s);
     ~Server();
 
+    // Opérateurs d'affectations
     Server &operator=(const Server& s);
     friend ostream &operator<<(ostream &os, const Server &dt);
     
+    // Setter et Getter pour la température
     void setTemperature(int t);
     int getTemperature();
 
+    // Méthodes pour écrire les données dans la console et dans notre fichier de logs.
     void consoleWrite();
     void fileWrite();
 
