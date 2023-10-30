@@ -1,10 +1,11 @@
-#include <temperature.hpp>
-#include <sensor.hpp>
+#include "temperature.hpp"
 
 // Génère la température
 float temperature::getTemperature(){
-    sensor<float> s1;
-    this->valTemperature = s1.aleaGenVal(FACTOR);
+    this->valTemperature = aleaGenVal();
+    while(this->valTemperature >= 40){
+        this->valTemperature = this->valTemperature/4; // Pour assurer la cohérence des valeurs
+    }
     return this->valTemperature;
 }
 

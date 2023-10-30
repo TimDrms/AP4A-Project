@@ -11,16 +11,22 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstring>
+#include <iomanip> // Pour la fonction setprecision()
+#include <chrono> // Pour savoir quand est-ce que les mesures sont faites
+#include <ctime>
 
+#include "scheduler.hpp"
 
 using namespace std;
 
-class Server{
+class Server: public scheduler{
     private:
     float temperature;
     float humidite;
-    float lumiere;
-    float sonore;
+    bool lumiere;
+    int sonore;
+    char yesOrNo[4];
 
     public:
 
@@ -40,5 +46,9 @@ class Server{
     // Méthodes pour écrire les données dans la console et dans notre fichier de logs.
     void consoleWrite();
     void fileWrite();
+
+    void dataRcv(); 
+
+    void initialisation();
 
 };

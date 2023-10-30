@@ -1,10 +1,8 @@
-#include <sound.hpp>
-#include <sensor.hpp>
+#include "sound.hpp"
 
-// Génère la température
+// Génère la valeur du son
 int sound::getSound(){
-    sensor<int> s1;
-    this->valSound = s1.aleaGenVal(SOUNDFACTOR);
+    this->valSound = aleaGenVal();
     return this->valSound;
 }
 

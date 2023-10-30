@@ -1,17 +1,22 @@
 #include <iostream>
 
-#define SOUNDFACTOR 23
+#include "sensor.hpp"
 
 using namespace std;
 
-class sound{
-    private:
+#ifndef SOUND_HPP
+#define SOUND_HPP
+
+class sound: public sensor<int>{
+    protected:
     int valSound;
 
     public:
     sound(){
-        valSound = false;
+        valSound = 0;
     }
     int getSound();
 
 };
+
+#endif // SOUND_HPP

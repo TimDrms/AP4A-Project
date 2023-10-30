@@ -9,25 +9,30 @@
  * 
  */
 
-#include <sensor.hpp>
-#include <temperature.hpp>
-#include <sound.hpp>
+#include "sensor.hpp"
+/*#include "temperature.hpp"
+#include "sound.hpp"
+#include "humidity.hpp"
+#include "light.hpp"*/ // Normalement il n'y a pas besoin d'include les 4 types de sensor
 
 // Génère un nombre au hasard
-// Problème : Lorsque c'est un int ça donne souvent 0 à cause de la division.
-template <class T> T sensor<T>::aleaGenVal(int factor){
-    T value = factor*(rand() / (T) rand());
-    cout << value << endl;
-    return value;
+template <class T> 
+T sensor<T>::aleaGenVal(){
+    this->value = 8*(rand() / (T) rand() + 1);
+    cout << this->value << endl; // La valeur générée pourra être modifiée par la suite.
+    return this->value;
 }
 
-// Récupère les valeurs des différents capteurs. Ca devrait retourner void, non ?
-template <class T> T sensor<T>::getValues(){
-    temperature tempe1;
-    sound sound1;
-
-    this->valTemperature = tempe1.getTemperature();
-    this->valSound = sound1.getSound();
-    return 0;
+template <>
+bool sensor<bool>::aleaGenVal(){
+    this->value = rand()%2;
+    cout << this->value << endl;
+    return this->value;
 }
 
+template <>
+int sensor<int>::aleaGenVal(){
+    this->value = rand()%110+20;
+    cout << this->value << endl;
+    return this->value;
+}

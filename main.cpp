@@ -1,34 +1,17 @@
-/**
- * @file main.cpp
- * @author Timothé DARMOISE (timothe.darmoise@utbm.fr)
- * @brief 
- * @version 0.1
- * @date 2023-09-15
- * 
- * @copyright Copyright (c) 2023
- * 
- */
-
-#include <server.hpp>
-#include <sensor.hpp>
-#include <temperature.hpp>
-#include <cstdlib>
-#include <ctime>
+#include "server.hpp"
 
 int main()
 {
     srand(time(NULL));
+    int nbCaptures = 0;
     Server s1;
-    sensor<float> sensor1;
-    temperature t1;
-    
-    // s1.setTemperature(30);
-    // s1.getTemperature();
-    s1.consoleWrite();
-    s1.fileWrite();
-    //sensor1.aleaGenVal();
-    // cout << s1;
 
-    //t1.getTemperature();
-    sensor1.getValues();
+    s1.initialisation();
+
+    cout << "Combien de captures voulez-vous faire au total ? (Maximum 1000)" << endl;
+    cin >> nbCaptures;
+
+    for(int i = 0; i < nbCaptures; i++){
+        s1.dataRcv();
+    }
 }

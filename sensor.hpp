@@ -11,30 +11,23 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <random>
+
+#ifndef SENSOR_HPP
+#define SENSOR_HPP
 
 using namespace std;
 
 template <class T> class sensor{
-    private:
-        float valTemperature;
-        
-        int valSound;
-        bool valLight;
-
+    protected:
+    T value;
     public:
     sensor(){
-        valTemperature = 0;
-        //float humidity = 0;
-        valSound = 0;
-        valLight = false;
+       
     };
 
     sensor(const sensor &s){
-        this->valTemperature = s.valTemperature;
-
-        this->valSound = s.valSound;
-        this->valLight = s.valLight;
-        //etc
+        
     }
 
     ~sensor(){
@@ -42,11 +35,10 @@ template <class T> class sensor{
     }
 
 
-    T aleaGenVal(int factor);
-    T getValues();
-
+    T aleaGenVal();
 };
 
 template class sensor<int>;
 template class sensor<float>;
 template class sensor<bool>;
+#endif // SENSOR_HPP

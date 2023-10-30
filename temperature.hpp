@@ -1,11 +1,14 @@
 #include <iostream>
 
-#define FACTOR 15
+#include "sensor.hpp"
 
 using namespace std;
 
-class temperature{
-    private:
+#ifndef TEMPERATURE_HPP
+#define TEMPERATURE_HPP
+
+class temperature: public sensor<float>{
+    protected:
     float valTemperature;
 
     public:
@@ -15,3 +18,5 @@ class temperature{
     float getTemperature();
 
 };
+
+#endif // TEMPERATURE_HPP
