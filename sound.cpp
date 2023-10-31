@@ -5,4 +5,3 @@ int sound::getSound(){
     this->valSound = aleaGenVal();
     return this->valSound;
 }
-

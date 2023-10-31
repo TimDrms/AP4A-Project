@@ -5,4 +5,3 @@ bool light::getLight(){
     this->valLight = aleaGenVal();
     return this->valLight;
 }
-

@@ -9,4 +9,3 @@ float temperature::getTemperature(){
     }
     return this->valTemperature;
 }
-

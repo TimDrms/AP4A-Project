@@ -9,4 +9,3 @@ float humidity::getHumidity(){
     }
     return this->valHumidity;
 }
-
