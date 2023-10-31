@@ -1,14 +1,3 @@
-/**
- * @file scheduler.cpp
- * @author Timothé DARMOISE (timothe.darmoise@utbm.fr)
- * @brief
- * @version 0.1
- * @date 2023-09-15
- *
- * @copyright Copyright (c) 2023
- *
- */
-
 #include "scheduler.hpp"
 
 scheduler::scheduler(){
@@ -33,26 +22,7 @@ scheduler& scheduler::operator=(const scheduler &s){
     return *this;
 }
 
-void scheduler::getAllValues() // Je pourrai surement remplacer par un appel des 4 fonctions en-dessous
-{
-    temperature tempe1;
-    sound sound1;
-    humidity humidity1;
-    light light1;
-
-    usleep(TEMPERATUREDELAY*1000); // usleep prend en paramètre des microsecondes. On multiplie par 1000 pour avoir des millisecondes.
-    this->valTemperature = tempe1.getTemperature();
-    cout << "Valeur finale de la température : " << this->valTemperature << endl;
-    usleep(SONOREDELAY*1000);
-    this->valSonore = sound1.getSound();
-    cout << "Valeur finale du son : " << this->valSonore << endl;
-    usleep(HUMIDITEDELAY*1000);
-    this->valHumidite = humidity1.getHumidity();
-    cout << "Valeur finale de l'humidité : " << this->valHumidite << endl;
-    usleep(LUMIEREDELAY*1000);
-    this->valLumiere = light1.getLight();
-    cout << "Valeur finale de la lumière : " << this->valLumiere << endl;
-}
+scheduler::~scheduler(){};
 
 float scheduler::getTemperatureValue(){
     temperature temperatureCaptor;

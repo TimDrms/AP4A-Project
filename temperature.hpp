@@ -12,9 +12,20 @@ class temperature: public sensor<float>{
     float valTemperature;
 
     public:
+    // Forme canonique de Coplien
     temperature(){
         valTemperature = 0;
     }
+    temperature(const temperature &t){
+        this->valTemperature = t.valTemperature;
+    }
+    ~temperature(){};
+    temperature &operator=(const temperature &t){
+        this->valTemperature = t.valTemperature;
+        return *this;
+    }
+
+    // Génère la valeur de température
     float getTemperature();
 
 };

@@ -12,9 +12,20 @@ class sound: public sensor<int>{
     int valSound;
 
     public:
+    // Forme canonique de Coplien
     sound(){
         valSound = 0;
     }
+    sound(const sound &s){
+        this->valSound = s.valSound;
+    }
+    ~sound(){};
+    sound &operator=(const sound &s){
+        this->valSound = s.valSound;
+        return *this;
+    }
+
+    // Génère la valeur du son
     int getSound();
 
 };

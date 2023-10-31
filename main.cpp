@@ -8,7 +8,7 @@ int main()
 
     s1.initialisation();
 
-    cout << "Combien de captures voulez-vous faire au total ? (Maximum 1000)" << endl;
+    cout << "Combien de captures voulez-vous effectuer au total ? (Maximum 1000)" << endl;
     cin >> nbCaptures;
 
     for(int i = 0; i < nbCaptures; i++){

@@ -12,9 +12,20 @@ class light: public sensor<bool>{
     bool valLight;
 
     public:
+    // Forme canonique de Coplien
     light(){
         valLight = false;
     }
+    light(const light &l){
+        this->valLight = l.valLight;
+    }
+    ~light(){};
+    light &operator=(const light &l){
+        this->valLight = l.valLight;
+        return *this;
+    }
+
+    // Génère la valeur de luminosité
     bool getLight();
 
 };

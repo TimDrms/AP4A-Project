@@ -3645,3 +3645,83 @@ Humidité : 16.2%
 Mon Oct 30 13:20:33 2023
 Température : 11.8°C
 Humidité : 51.8%
+Mon Oct 30 13:26:50 2023
+Température : 11°C
+Humidité : 43.8%
+Mon Oct 30 13:26:51 2023
+Température : 34.4°C
+Humidité : 23.9%
+Mon Oct 30 13:26:52 2023
+Température : 9.49°C
+Humidité : 10.3%
+Mon Oct 30 13:27:45 2023
+Température : 29°C
+Lumière : true
+Mon Oct 30 13:27:46 2023
+Température : 15.2°C
+Lumière : false
+Mon Oct 30 13:27:48 2023
+Température : 27.5°C
+Lumière : true
+Mon Oct 30 13:27:49 2023
+Température : 11.2°C
+Lumière : true
+Tue Oct 31 10:07:26 2023
+Température : 12.7°C
+Lumière : false
+Tue Oct 31 10:07:27 2023
+Température : 19.2°C
+Lumière : true
+Tue Oct 31 10:07:29 2023
+Température : 11.5°C
+Lumière : false
+Tue Oct 31 10:07:30 2023
+Température : 14°C
+Lumière : true
+Tue Oct 31 10:07:32 2023
+Température : 22.6°C
+Lumière : false
+Tue Oct 31 10:08:20 2023
+Sonore : 72dB
+Lumière : true
+Tue Oct 31 10:08:22 2023
+Sonore : 30dB
+Lumière : false
+Tue Oct 31 10:08:23 2023
+Sonore : 50dB
+Lumière : false
+Tue Oct 31 10:08:24 2023
+Sonore : 67dB
+Lumière : false
+Tue Oct 31 10:08:26 2023
+Sonore : 78dB
+Lumière : true
+Tue Oct 31 10:14:27 2023
+Température : 14.1°C
+Tue Oct 31 10:14:27 2023
+Température : 12.5°C
+Tue Oct 31 10:17:04 2023
+Température : 23.6°C
+Humidité : 9.59%
+Sonore : 41dB
+Lumière : true
+Tue Oct 31 10:17:07 2023
+Température : 15.2°C
+Humidité : 15.3%
+Sonore : 93dB
+Lumière : false
+Tue Oct 31 10:17:09 2023
+Température : 20.8°C
+Humidité : 9.09%
+Sonore : 64dB
+Lumière : true
+Tue Oct 31 10:59:54 2023
+Température : 10.1°C
+Humidité : 8.88%
+Tue Oct 31 10:59:55 2023
+Température : 15.3°C
+Humidité : 13%
+Tue Oct 31 11:15:42 2023
+Température : 15.3°C
+Tue Oct 31 11:15:42 2023
+Température : 25.8°C

@@ -12,9 +12,20 @@ class humidity: public sensor<float>{
     float valHumidity;
 
     public:
+    // Forme canonique de Coplien
     humidity(){
         valHumidity = 0;
     }
+    humidity(const humidity &h){
+        this->valHumidity = h.valHumidity;
+    }
+    ~humidity(){};
+    humidity &operator=(const humidity &h){
+        this->valHumidity = h.valHumidity;
+        return *this;
+    }
+
+    // Génère la valeur d'humidité
     float getHumidity();
 
 };

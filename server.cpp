@@ -1,32 +1,23 @@
-/**
- * @file Server.cpp
- * @author Timothé DARMOISE (timothe.darmoise@utbm.fr)
- * @brief
- * @version 0.1
- * @date 2023-09-15
- *
- * @copyright Copyright (c) 2023
- *
- */
-
 #include "server.hpp"
 
+// Constructeur par défaut
 Server::Server()
 {
     this->temperature = 0;
     this->humidite = 0;
     this->lumiere = false;
     this->sonore = 0;
-    //strcpy(this->yesOrNo, "n");
+    strcpy(this->yesOrNo, "n");
 }
 
+// Constructeur par recopie
 Server::Server(const Server &s)
 {
     this->temperature = s.temperature;
     this->humidite = s.humidite;
     this->lumiere = s.lumiere;
     this->sonore = s.sonore;
-    //strcpy(this->yesOrNo, s.yesOrNo);
+    strcpy(this->yesOrNo, s.yesOrNo);
 }
 
 // Destructeur
@@ -39,20 +30,8 @@ Server &Server::operator=(const Server &s)
     this->humidite = s.humidite;
     this->lumiere = s.lumiere;
     this->sonore = s.sonore;
-    //strcpy(this->yesOrNo, s.yesOrNo);
+    strcpy(this->yesOrNo, s.yesOrNo);
     return *this;
-}
-
-// Setter temperature
-void Server::setTemperature(int t)
-{
-    this->temperature = t;
-}
-
-// Getter temperature
-int Server::getTemperature()
-{
-    return this->temperature;
 }
 
 // Ecrit dans la console les données
@@ -77,33 +56,19 @@ void Server::fileWrite()
     }
 }
 
-// Surcharge opérateur <<
+/*
+Cette fonction permet de print les valeurs de notre serveur dans la console grâce à la surcharge de l'opérateur <<.
+Elle est appelée par la fonction consoleWrite() et par la fonction fileWrite().
+*/
 ostream &operator<<(ostream &os, const Server &srv)
 {
-    /*os << "Température : " << srv.temperature << "°C\nHumidité : " << srv.humidite << "%\nLumière : "; // << srv.lumiere << "\nSonore : " << srv.sonore << "dB" << endl;
-
-    if (srv.lumiere)
-    {
-        os << "true";
-    }
-    else
-    {
-        os << "false";
-    }
-
-    os << "\nSonore : " << srv.sonore << "dB" << endl;
-    return os;*/
-    /*time_t t; // t passed as argument in function time()
-    struct tm * tt; // decalring variable for localtime()
-    time (&t); //passing argument to time()
-    tt = localtime(&t);
-    os << "Current Day, Date and Time is = "<< asctime(tt);*/
-
     // Obtenir la date et heure à laquelle les mesures ont été faites
     auto currentTime = chrono::system_clock::now();
     time_t currentTime_t = chrono::system_clock::to_time_t(currentTime);
     os << ctime(&currentTime_t);
 
+    // Renvoie chaque valeur que l'on a décidé de capturer. On utilise srv.yesOrNo[0] == 'y' || srv.yesOrNo[0] == 'Y' pour savoir si on doit afficher la valeur ou non
+    // On utilise setprecision(3) pour avoir 3 chiffres après la virgule
     if (srv.yesOrNo[0] == 'y' || srv.yesOrNo[0] == 'Y')
     {
         os << setprecision(3) << "Température : " << srv.temperature << "°C" << endl;
@@ -131,11 +96,12 @@ ostream &operator<<(ostream &os, const Server &srv)
     return os;
 }
 
+// Capture chaque valeur que l'on a décidé de capturer.
 void Server::dataRcv()
 {
     if (yesOrNo[0] == 'y' || yesOrNo[0] == 'Y')
     {
-        this->temperature = getTemperatureValue();
+        this->temperature = getTemperatureValue(); // On utilise la fonction getTemperatureValue() pour obtenir la valeur de la température
     }
     if (yesOrNo[1] == 'y' || yesOrNo[1] == 'Y')
     {
@@ -153,6 +119,7 @@ void Server::dataRcv()
     fileWrite();   // Permet d'écrire les nouvelles valeurs dans le fichier de log.
 }
 
+// Initialisation du programme. On demande à l'utilisateur quels capteurs il aimerait utiliser.
 void Server::initialisation()
 {
     cout << "Bienvenue dans ce simulateur de qualité de l'air.\nAvant de commencer nous avons quelques questions à vous poser afin de savoir quels capteurs vous aimeriez utiliser. Répondez toujours par la lettre y ou la lettre n (respectivement pour yes ou no)." << endl;
@@ -164,15 +131,4 @@ void Server::initialisation()
     cin >> yesOrNo[2];
     cout << "Voulez-vous utilisez le capteur de son ? y/n" << endl;
     cin >> yesOrNo[3];
-    /*for (int i = 0; i <= 3; i++)
-    {
-        if (yesOrNo[i] == 'y' || yesOrNo[i] == 'Y')
-        {
-            cout << "La réponse est oui.0" << endl;
-        }
-        else
-        {
-            cout << "La réponse est non.0" << endl;
-        }
-    }*/
 }

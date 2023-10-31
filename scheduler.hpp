@@ -1,19 +1,7 @@
-/**
- * @file scheduler.hpp
- * @author Timothé DARMOISE (timothe.darmoise@utbm.fr)
- * @brief 
- * @version 0.1
- * @date 2023-09-15
- * 
- * @copyright Copyright (c) 2023
- * 
- */
-
 #include <iostream>
 #include <unistd.h> // Pour la fonction sleep. /!\ Ne fonctionne qu'avec Linux !
 
 #include "sensor.hpp"
-
 #include "temperature.hpp"
 #include "sound.hpp"
 #include "humidity.hpp"
@@ -36,14 +24,11 @@ class scheduler{
     int valSonore;
 
     public:
-
     scheduler();
-
     scheduler(const scheduler& s);
-
     scheduler &operator=(const scheduler& s);
+    ~scheduler();
 
-    void getAllValues();
     float getTemperatureValue();
     float getHumidityValue();
     int getSoundValue();

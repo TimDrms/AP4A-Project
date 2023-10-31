@@ -1,14 +1,3 @@
-/**
- * @file Server.hpp
- * @author Timothé DARMOISE (timothe.darmoise@utbm.fr)
- * @brief 
- * @version 0.1
- * @date 2023-09-15
- * 
- * @copyright Copyright (c) 2023
- * 
- */
-
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -26,7 +15,7 @@ class Server: public scheduler{
     float humidite;
     bool lumiere;
     int sonore;
-    char yesOrNo[4];
+    char yesOrNo[4]; // Permet de savoir si on doit capturer la valeur ou non pour chaque capteur
 
     public:
 
@@ -35,20 +24,18 @@ class Server: public scheduler{
     Server(const Server &s);
     ~Server();
 
-    // Opérateurs d'affectations
+    // Opérateur d'affectation et surcharge de l'opérateur <<
     Server &operator=(const Server& s);
     friend ostream &operator<<(ostream &os, const Server &dt);
-    
-    // Setter et Getter pour la température
-    void setTemperature(int t);
-    int getTemperature();
 
     // Méthodes pour écrire les données dans la console et dans notre fichier de logs.
     void consoleWrite();
     void fileWrite();
 
+    // Méthode pour capturer les données
     void dataRcv(); 
 
+    // Méthode pour initialiser notre serveur avec les données que l'on veut capturer
     void initialisation();
 
 };

@@ -1,14 +1,3 @@
-/**
- * @file sensor.hpp
- * @author Timothé DARMOISE (timothe.darmoise@utbm.fr)
- * @brief 
- * @version 0.1
- * @date 2023-09-15
- * 
- * @copyright Copyright (c) 2023
- * 
- */
-
 #include <iostream>
 #include <cstdlib>
 #include <random>
@@ -21,19 +10,11 @@ using namespace std;
 template <class T> class sensor{
     protected:
     T value;
+    
     public:
-    sensor(){
-       
-    };
-
-    sensor(const sensor &s){
-        
-    }
-
-    ~sensor(){
-
-    }
-
+    sensor(){};
+    sensor(const sensor &s){}
+    ~sensor(){}
 
     T aleaGenVal();
 };
