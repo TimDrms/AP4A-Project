@@ -122,13 +122,20 @@ void Server::dataRcv()
 // Initialisation du programme. On demande à l'utilisateur quels capteurs il aimerait utiliser.
 void Server::initialisation()
 {
-    cout << "Bienvenue dans ce simulateur de qualité de l'air.\nAvant de commencer nous avons quelques questions à vous poser afin de savoir quels capteurs vous aimeriez utiliser. Répondez toujours par la lettre y ou la lettre n (respectivement pour yes ou no)." << endl;
+    cout << "Bienvenue dans ce simulateur de qualité de l'air.\nAvant de commencer, nous avons quelques questions à vous poser afin de savoir quels capteurs vous aimeriez utiliser. Répondez toujours par la lettre y ou la lettre n (respectivement pour yes ou no)." << endl;
     cout << "Voulez-vous utilisez le capteur de température ? y/n" << endl;
     cin >> yesOrNo[0];
     cout << "Voulez-vous utilisez le capteur d'humidité ? y/n" << endl;
     cin >> yesOrNo[1];
     cout << "Voulez-vous utilisez le capteur sonore ? y/n" << endl;
     cin >> yesOrNo[2];
-    cout << "Voulez-vous utilisez le capteur de son ? y/n" << endl;
+    cout << "Voulez-vous utilisez le capteur de lumière ? y/n" << endl;
     cin >> yesOrNo[3];
+
+    /* Lexique pour la variable yesOrNo :
+    yesOrNo[0] : capteur de température
+    yesOrNo[1] : capteur d'humidité
+    yesOrNo[2] : capteur sonore
+    yesOrNo[3] : capteur de lumière
+    */
 }
